@@ -393,7 +393,7 @@ class _TimePickerSpinnerPopUpState extends State<TimePickerSpinnerPopUp>
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(widget.radius),
-            color: Theme.of(context).colorScheme.surface,
+            color: Colors.white,
             boxShadow: [
               BoxShadow(
                 color: const Color(0xFF000000).withOpacity(0.08),
@@ -431,7 +431,7 @@ class _TimePickerSpinnerPopUpState extends State<TimePickerSpinnerPopUp>
                         initialDateTime: _selectedDateTimeSpinner,
                         use24hFormat: widget.use24hFormat,
                         mode: widget.mode,
-                        backgroundColor: Theme.of(context).colorScheme.surface,
+                        backgroundColor: Colors.white,
                         onDateTimeChanged: (dateTime) {
                           if (widget.minTime != null &&
                               dateTime.isBefore(widget.minTime!)) {
@@ -519,7 +519,7 @@ class _TimePickerSpinnerPopUpState extends State<TimePickerSpinnerPopUp>
               bottom: widget.positionBottom ?? (bottom ?? 0 - 10),
               child: ConstrainedBox(
                   constraints: BoxConstraints(
-                    maxHeight: 270 * value,
+                    maxHeight: 250 * value,
                   ),
                   child: SingleChildScrollView(
                       child: widget.locale != null ? menuWithLocale : menu)),
