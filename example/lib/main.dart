@@ -53,10 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
             top: 60,
             child: TimePickerSpinnerPopUp(
               mode: CupertinoDatePickerMode.monthYear,
+               positionLeft: 40,
+              positionTop: 250,
               initTime: DateTime.now(),
               minTime: DateTime.now().subtract(const Duration(days: 10)),
               maxTime: DateTime.now().add(const Duration(days: 10)),
-              barrierColor: Colors.black12, //Barrier Color when pop up show
+              barrierColor: Colors.black12,
+              //Barrier Color when pop up show
               minuteInterval: 1,
               padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
               cancelText: 'Cancel',

@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 part 'time_picker_spinner_controller.dart';
-
 part 'time_picker_spinner_enum.dart';
 
 class TimePickerSpinnerPopUp extends StatefulWidget {
@@ -37,6 +36,10 @@ class TimePickerSpinnerPopUp extends StatefulWidget {
     this.radius = 10,
     this.use24hFormat = true,
     this.locale,
+    this.positionLeft,
+    this.positionTop,
+    this.positionRight,
+    this.positionBottom,
   }) : super(key: key);
 
   /// Type of press to show pop up, default is [PressType.singlePress]
@@ -111,6 +114,12 @@ class TimePickerSpinnerPopUp extends StatefulWidget {
 
   /// Whether to use 24 hour format. Defaults to true.
   final bool use24hFormat;
+
+  /// Position of pop up on screen
+  final double? positionLeft;
+  final double? positionTop;
+  final double? positionRight;
+  final double? positionBottom;
 
   /// Custom locale
   /// if you want to use this locale, you must declare support localizationsDelegates in MaterialApp:
@@ -504,10 +513,10 @@ class _TimePickerSpinnerPopUpState extends State<TimePickerSpinnerPopUp>
             }
 
             return Positioned(
-              left: left - 10,
-              right: right - 10,
-              top: top == null ? null : (top - 10),
-              bottom: bottom == null ? null : (bottom - 10),
+              left: widget.positionLeft ?? left - 10,
+              right: widget.positionRight ?? right - 10,
+              top: widget.positionTop ?? (top ?? 0 - 10),
+              bottom: widget.positionBottom ?? (bottom ?? 0 - 10),
               child: ConstrainedBox(
                   constraints: BoxConstraints(
                     maxHeight: 270 * value,
