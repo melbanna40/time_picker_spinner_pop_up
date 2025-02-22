@@ -23,7 +23,7 @@ dev_dependencies:
     path: ../
 
 dependency_overrides:
-  intl: 0.18.0
+  intl: 0.20.0
 
 flutter:
   uses-material-design: true
